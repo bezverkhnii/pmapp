@@ -1,0 +1,30 @@
+.side-nav-content{
+    color:white;
+}
+
+.nav-list{
+    padding-top:10rem;
+    list-style: none;
+    height:100%;
+}
+
+.nav-list-item{
+    display: flex;
+    align-items: center;
+    height:50px;
+    font-size: 1.1rem;
+}
+
+.nav-list-item i:hover{
+    color:orange;
+}
+
+.login{
+    position: absolute;
+    bottom:1rem;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
