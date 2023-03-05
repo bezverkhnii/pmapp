@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from './calendar/calendar.module';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TodaysTaskModule } from './todays-task/todays-task.module';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     CalendarModule,
     FontAwesomeModule,
+    TodaysTaskModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
