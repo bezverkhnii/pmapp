@@ -1,0 +1,39 @@
+<div>
+    <app-side-nav></app-side-nav>
+</div>
+    <main>
+      <div class="display-area">
+        <div class="welcome-msg">
+            <h1>Welcome, name!</h1>
+            <h3>Here is your plan for today</h3>
+            <div class="">
+              <!--welcome
+              search bar-->
+          </div>
+        </div>
+        <div class="main">
+            <mat-grid-list cols="4" rowHeight="300px" [gutterSize]="'1rem'">
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="2">
+                  <app-calendar></app-calendar>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="3"
+                  [rowspan]="1">
+                  <app-todays-task></app-todays-task>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="1">
+                  <app-all-tasks></app-all-tasks>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="1">
+                  <app-kanban-view></app-kanban-view>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </div>
+    </main>

@@ -11,11 +11,13 @@ import { TodaysTaskModule } from './todays-task/todays-task.module';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AllTasksModule } from './all-tasks/all-tasks.module';
 import { KanbanViewModule } from './kanban-view/kanban-view.module';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent
+    SideNavComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

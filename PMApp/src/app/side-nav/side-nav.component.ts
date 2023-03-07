@@ -12,17 +12,20 @@ export class SideNavComponent {
     {
       number: '1',
       name: 'home',
-      icon: 'fa-solid fa-house'
+      icon: 'fa-solid fa-house',
+      path: 'main-page'
     },
     {
       number: '2',
       name: 'overview',
-      icon: 'fa-solid fa-compass-drafting'
+      icon: 'fa-solid fa-compass-drafting',
+      path: ''
     }, 
     {
       number: '3',
       name: 'add task',
-      icon: 'fa-solid fa-square-plus'
+      icon: 'fa-solid fa-square-plus',
+      path: ''
     }
   ]
 
