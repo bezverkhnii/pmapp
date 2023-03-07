@@ -13,7 +13,7 @@ export class SideNavComponent {
       number: '1',
       name: 'home',
       icon: 'fa-solid fa-house',
-      path: 'main-page'
+      path: 'main'
     },
     {
       number: '2',
