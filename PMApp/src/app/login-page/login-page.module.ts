@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SideNavComponent } from './side-nav.component';
-
+import { LoginPageComponent } from './login-page.component';
 
 @NgModule({
   declarations: [
-    SideNavComponent
+    LoginPageComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SideNavComponent
+    LoginPageComponent
   ]
 })
-export class SideNavModule { }
+export class LoginPageModule { }

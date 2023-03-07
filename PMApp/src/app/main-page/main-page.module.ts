@@ -1,28 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodaysTaskComponent } from '../todays-task/todays-task.component';
+import { TodaysTaskModule } from '../todays-task/todays-task.module';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { AllTasksComponent } from '../all-tasks/all-tasks.component';
-import { KanbanViewComponent } from '../kanban-view/kanban-view.component';
-import { CalendarComponent } from '../calendar/calendar.component';
-import { SideNavComponent } from '../side-nav/side-nav.component';
-import { MainPageComponent } from './main-page.component';
+import { AllTasksModule } from '../all-tasks/all-tasks.module';
+import { KanbanViewModule } from '../kanban-view/kanban-view.module';
+import { CalendarModule } from '../calendar/calendar.module';
+import { SideNavModule } from '../side-nav/side-nav.module';
+import { MainPageComponent } from '../main-page/main-page.component';
+
 
 
 @NgModule({
   declarations: [
-    SideNavComponent,
-    CalendarComponent,
-    KanbanViewComponent,
-    AllTasksComponent,
-    TodaysTaskComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,
+    TodaysTaskModule,
     MatGridListModule,
-    SideNavComponent
+    AllTasksModule,
+    KanbanViewModule,
+    CalendarModule,
+    SideNavModule
   ],
-  exports: [
+  exports:[
     MainPageComponent
   ]
 })
