@@ -10,11 +10,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodaysTaskModule } from './todays-task/todays-task.module';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AllTasksModule } from './all-tasks/all-tasks.module';
+import { KanbanViewModule } from './kanban-view/kanban-view.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,8 @@ import { AllTasksModule } from './all-tasks/all-tasks.module';
     FontAwesomeModule,
     TodaysTaskModule,
     MatGridListModule,
-    AllTasksModule
+    AllTasksModule,
+    KanbanViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

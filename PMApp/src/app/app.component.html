@@ -12,17 +12,44 @@
               search bar-->
           </div>
         </div>
-        <div class="grid">
-          <div class="card">
-            <app-calendar></app-calendar>
-          </div>
-          <div class="card">
-            <app-todays-task></app-todays-task>
-          </div>
-          <div class="card">
-            <app-all-tasks></app-all-tasks>
+        <!-- <div class="grid">
+            <div class="card">
+              <app-calendar></app-calendar>
+            </div>
+            <div class="card">
+              <app-todays-task></app-todays-task>
+            </div>
+            <div class="card">
+              <app-all-tasks></app-all-tasks>
+            </div>
+            <div class="card">
+              <app-kanban-view></app-kanban-view>
+            </div>
+        </div> -->
+        <div class="main">
+            <mat-grid-list cols="4" rowHeight="300px" [gutterSize]="'1rem'">
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="2">
+                  <app-calendar></app-calendar>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="3"
+                  [rowspan]="1">
+                  <app-todays-task></app-todays-task>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="1">
+                  <app-all-tasks></app-all-tasks>
+              </mat-grid-tile>
+              <mat-grid-tile class="card"
+                  [colspan]="1"
+                  [rowspan]="1">
+                  <app-kanban-view></app-kanban-view>
+              </mat-grid-tile>
+            </mat-grid-list>
           </div>
         </div>
-      </div>
     </main>
 </body>

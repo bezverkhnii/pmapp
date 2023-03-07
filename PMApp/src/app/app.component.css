@@ -43,12 +43,21 @@ app-side-nav{
     background-color: white;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 20rem 50%; 
-    grid-template-rows: 22rem 20rem;
-    column-gap: 2rem;
-    row-gap: 2rem;
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top:2rem;
 }
+.mat-grid-list{
+    width:75%;
+}
 
+
+::ng-deep .mat-grid-list mat-grid-tile .mat-grid-tile-content{
+    display: block !important; /* or whichever you need */
+  }
+
+.bold{
+    font-weight: bold;
+}
