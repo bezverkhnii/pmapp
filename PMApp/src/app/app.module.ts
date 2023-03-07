@@ -9,11 +9,12 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodaysTaskModule } from './todays-task/todays-task.module';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AllTasksModule } from './all-tasks/all-tasks.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CalendarModule,
     FontAwesomeModule,
     TodaysTaskModule,
-    MatGridListModule
+    MatGridListModule,
+    AllTasksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
