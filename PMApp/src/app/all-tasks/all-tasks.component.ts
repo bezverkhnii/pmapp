@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AllTasksComponent {
 
   tasks: Task[] = [
-    new Task('This is '),
-    new Task('works'),
+    new Task('This'),
+    new Task('works too'),
   ];
 
 }

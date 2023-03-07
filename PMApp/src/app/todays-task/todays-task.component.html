@@ -1,4 +1,8 @@
 <mat-list>
-    <mat-list-item>Item 1</mat-list-item>
+    <mat-list-item>Tasks for today:</mat-list-item>
     <mat-divider></mat-divider>
+    <div *ngFor="let task of tasks">
+        <mat-list-item>{{ task.title }}</mat-list-item>
+        <mat-divider></mat-divider>
+    </div>
 </mat-list>
