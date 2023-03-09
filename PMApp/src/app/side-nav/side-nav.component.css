@@ -24,6 +24,17 @@
     bottom:1rem;
 }
 
+::ng-deep .mdc-form-field {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.slide-toggle p{
+    color:white;
+    font-weight: bold;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
 a{
     text-decoration: none;
     color:white;

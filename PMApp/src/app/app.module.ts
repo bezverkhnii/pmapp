@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainPageModule } from './main-page/main-page.module';
 import { LoginPageModule } from './login-page/login-page.module';
+import { RegPageModule } from './reg-page/reg-page.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginPageModule } from './login-page/login-page.module';
     BrowserAnimationsModule,
     FontAwesomeModule,
     MainPageModule,
-    LoginPageModule
+    LoginPageModule,
+    RegPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
