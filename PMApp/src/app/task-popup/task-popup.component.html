@@ -1,0 +1,38 @@
+<div class="">
+    <app-side-nav></app-side-nav>
+</div>
+<div class="display-area">
+    <div class="container">
+        <div class="card">
+            <div class="close">
+                <button><mat-icon fontIcon="disabled_by_default"></mat-icon></button>
+            </div>
+            <div class="task-name">
+                <input type="text" placeholder="New task">
+            </div>
+            <mat-divider></mat-divider>
+            <div class="content">
+                <div class="status">
+                    <p class="prop">Status</p>
+                    <p>data here</p>
+                </div>
+                <div class="due">
+                    <p class="prop">Due date</p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select date</mat-label>
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="priority">
+                    <p class="prop">Priority</p>
+                    <p>data here</p>
+                </div>
+            </div>
+            <div class="submit">
+                <button class="">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { KanbanViewComponent } from './kanban-view.component';
-import {MatRippleModule} from '@angular/material/core';
-
+import { MatRippleModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { SideNavModule } from '../side-nav/side-nav.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,9 @@ import {MatRippleModule} from '@angular/material/core';
   ],
   imports: [
     CommonModule,
-    MatRippleModule
+    MatRippleModule,
+    MatGridListModule,
+    SideNavModule
   ],
   exports: [
     KanbanViewComponent

@@ -3,12 +3,19 @@
   </div>
     <main>
       <div class="display-area">
-        <div class="welcome-msg">
-            <h1>Welcome, name!</h1>
-            <h3>Here is your plan for today</h3>
-            <div class="">
-              <!--welcome
-              search bar-->
+        <div class="welcome-container">
+          <div class="">
+              <h1>Welcome, name!</h1>
+              <h3>Here is your plan for today</h3>
+          </div>
+            <div class="search-container">
+              <form action="" class="search-bar">
+                <input type="text" placeholder="Find necessary task!" name="q">
+                <button type="submit"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon></button>
+              </form>
+          </div>
+          <div class="user-container">
+            <p class="user-name">name</p>
           </div>
         </div>
         <div class="main">
@@ -28,11 +35,13 @@
                   [rowspan]="1">
                   <app-all-tasks></app-all-tasks>
               </mat-grid-tile>
+              <a href="kanban-table">
               <mat-grid-tile class="card"
-                  [colspan]="1"
+                  [colspan]="2"
                   [rowspan]="1">
                   <app-kanban-view></app-kanban-view>
               </mat-grid-tile>
+              </a>
             </mat-grid-list>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { KanbanViewModule } from '../kanban-view/kanban-view.module';
 import { CalendarModule } from '../calendar/calendar.module';
 import { SideNavModule } from '../side-nav/side-nav.module';
 import { MainPageComponent } from '../main-page/main-page.component';
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { MainPageComponent } from '../main-page/main-page.component';
     AllTasksModule,
     KanbanViewModule,
     CalendarModule,
-    SideNavModule
+    SideNavModule,
+    MatIconModule
   ],
   exports:[
     MainPageComponent

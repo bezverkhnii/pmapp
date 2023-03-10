@@ -20,13 +20,13 @@ export class SideNavComponent {
       number: '2',
       name: 'overview',
       icon: 'fa-solid fa-compass-drafting',
-      path: ''
+      path: 'kanban-table'
     }, 
     {
       number: '3',
       name: 'add task',
       icon: 'fa-solid fa-square-plus',
-      path: ''
+      path: 'create-task'
     }
   ]
 

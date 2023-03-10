@@ -15,23 +15,78 @@ app-side-nav{
 }
 
 .display-area{
-    width:100%;
+    width:90%;
     position: absolute;
     left:10rem;
 }
 
-.welcome-msg{
+.welcome-container{
+    display: flex;
     color: rgb(23,31,57);
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.welcome-msg h1{
+.user-name{
+    color:rgb(23,31,57);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.welcome-container h1{
     font-weight: bold;
     font-size: 2.5rem;
 }
 
-.welcome-msg h3{
+.welcome-container h3{
     font-weight:lighter;
     font-size: 1.5rem;
+}
+
+.search-bar{
+    width:100%;
+    max-width:700px;
+    background:rgba(150, 150, 150, 0.2) ;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding:0 10px;
+}
+
+.search-bar input{
+    background: transparent;
+    flex:1;
+    border:0;
+    outline:none;
+    padding:15px 15px;
+    font-size: 17px;
+    color:#707070;
+}
+
+::placeholder{
+    color: #707070;
+}
+
+.search-bar button mat-icon{
+    font-size: 1.5rem;
+    color:white
+}
+
+.search-bar button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    border-radius: 50%;
+    width:37px;
+    height:37px;
+    background: rgb(23,31,57);
+    cursor: pointer;
+}
+
+.search-bar button:hover{
+    background: orange;
 }
 
 .card{
@@ -57,9 +112,10 @@ app-side-nav{
 
 
 ::ng-deep .mat-grid-list mat-grid-tile .mat-grid-tile-content{
-    display: block !important; /* or whichever you need */
+    display: block !important;
   }
 
 .bold{
     font-weight: bold;
 }
+

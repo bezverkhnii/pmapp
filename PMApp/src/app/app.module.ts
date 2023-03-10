@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainPageModule } from './main-page/main-page.module';
 import { LoginPageModule } from './login-page/login-page.module';
 import { RegPageModule } from './reg-page/reg-page.module';
+import { TaskPopupModule } from './task-popup/task-popup.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegPageModule } from './reg-page/reg-page.module';
     FontAwesomeModule,
     MainPageModule,
     LoginPageModule,
-    RegPageModule
+    RegPageModule,
+    TaskPopupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
