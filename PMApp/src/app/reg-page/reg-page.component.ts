@@ -18,9 +18,34 @@ export class RegPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  url = 'https://damp-meadow-16024.herokuapp.com/auth/signup';
+
   logInputValues(): void {
-    console.log('Name:', this.name);
-    console.log('Login:', this.login);
-    console.log('Password:', this.password);
+    let data = {
+      name: this.name,
+      login: this.login,
+      password: this.password,
+    };
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    fetch(this.url, options)
+    .then(response => {
+    if (response.ok) {
+      console.log('User created successfully');
+    } else {
+      console.error('Failed to create user');
+    }
+  })
+  .catch(error => {
+    console.error('Error creating user:', error);
+  });
   }
+
 }

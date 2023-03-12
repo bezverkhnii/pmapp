@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {MatRippleModule} from '@angular/material/core';
     MatInputModule,
     MatChipsModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    FormsModule
   ],
   exports: [
     LoginPageComponent
