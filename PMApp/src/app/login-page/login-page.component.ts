@@ -16,7 +16,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  url = 'https://damp-meadow-16024.herokuapp.com/auth/signin';
+  url = 'http://localhost:3000/auth/signin';
 
   logIn(): void{
     let data = {
@@ -43,6 +43,5 @@ export class LoginPageComponent implements OnInit {
     .catch(error => {
       console.error('Error logging in user:', error);
     });
-
   }
 }

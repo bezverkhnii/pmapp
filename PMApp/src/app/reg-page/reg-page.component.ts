@@ -18,7 +18,7 @@ export class RegPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  url = 'https://damp-meadow-16024.herokuapp.com/auth/signup';
+  url = 'http://localhost:3000/auth/signup';
 
   logInputValues(): void {
     let data = {
