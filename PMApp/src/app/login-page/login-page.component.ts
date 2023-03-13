@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -7,16 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
   hide = true;
+  
+  url = 'http://localhost:3000/auth/signin';
 
   login!: string;
   password!: string;
 
-  constructor() { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+  constructor(private _snackBar: MatSnackBar,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  url = 'http://localhost:3000/auth/signin';
+
+  openSnackBar(response: string, answer: string): void {
+    this._snackBar.open(response, answer, {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: 3000,
+    });
+  }
 
   logIn(): void{
     let data = {
@@ -35,13 +54,14 @@ export class LoginPageComponent implements OnInit {
     fetch(this.url, options)
     .then(response => {
       if (response.ok) {
-        console.log('User logged in successfully');
+        this.openSnackBar('User logged in successfully!', '✅');
+        this.router.navigate(['/main']);
       } else {
-        console.error('Failed to login user');
+        this.openSnackBar('Invalid login or password', '❌');
       }
     })
     .catch(error => {
-      console.error('Error logging in user:', error);
+      this.openSnackBar('Error logging in user:', error);
     });
   }
 }

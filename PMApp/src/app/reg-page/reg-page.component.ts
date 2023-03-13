@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+
 
  
 @Component({
@@ -9,16 +15,27 @@ import { Component, OnInit } from '@angular/core';
 export class RegPageComponent implements OnInit {
   hide = true;
 
+  url = 'http://localhost:3000/auth/signup';
+
   name!: string;
   login!: string;
   password!: string;
 
-  constructor() { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  url = 'http://localhost:3000/auth/signup';
+  openSnackBar(response: string, answer: string): void {
+    this._snackBar.open(response, answer, {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: 3000,
+    });
+  }
 
   logInputValues(): void {
     let data = {
@@ -38,9 +55,9 @@ export class RegPageComponent implements OnInit {
     fetch(this.url, options)
     .then(response => {
     if (response.ok) {
-      console.log('User created successfully');
+      this.openSnackBar('User created successfully', '✅');
     } else {
-      console.error('Failed to create user');
+      this.openSnackBar('Failed to create user', '❌');
     }
   })
   .catch(error => {
