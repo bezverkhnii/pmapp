@@ -5,6 +5,8 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { UserDataService } from '../user-data.service';
+
 
 @Component({
   selector: 'app-login-page',
@@ -23,7 +25,8 @@ export class LoginPageComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   constructor(private _snackBar: MatSnackBar,
-              private router: Router) { }
+              private router: Router,
+              private userDataService: UserDataService) { }
 
   ngOnInit(): void {
   }
@@ -55,6 +58,7 @@ export class LoginPageComponent implements OnInit {
     .then(response => {
       if (response.ok) {
         this.openSnackBar('User logged in successfully!', '✅');
+        this.userDataService.userData = { username: this.login }
         this.router.navigate(['/main']);
       } else {
         this.openSnackBar('Invalid login or password', '❌');

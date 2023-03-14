@@ -1,21 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../user-data.service';
+
 
 @Component({
   selector: 'app-all-tasks',
   templateUrl: './all-tasks.component.html',
   styleUrls: ['./all-tasks.component.css']
 })
-export class AllTasksComponent {
+export class AllTasksComponent implements OnInit{
 
-  tasks: Task[] = [
-    new Task('This'),
-    new Task('works too'),
-  ];
+  constructor(private userDataService: UserDataService){}
 
-}
-
-class Task {
-  constructor(public title: string){
-
+  ngOnInit(){ 
   }
+  tasks = this.userDataService.tasksList;
 }

@@ -5,7 +5,7 @@
       <div class="display-area">
         <div class="welcome-container">
           <div class="">
-              <h1>Welcome, name!</h1>
+              <h1>Welcome, {{ userData.username }}!</h1>
               <h3>Here is your plan for today</h3>
           </div>
             <div class="search-container">
@@ -15,7 +15,7 @@
               </form>
           </div>
           <div class="user-container">
-            <p class="user-name">name</p>
+            <p class="user-name">{{ userData.username }}</p>
           </div>
         </div>
         <div class="main">

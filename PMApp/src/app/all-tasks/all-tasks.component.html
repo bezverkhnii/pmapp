@@ -1,8 +1,7 @@
-<p class="header">Projects directory</p>
+<p class="header">Tasks directory</p>
 <mat-list>
-    <mat-divider></mat-divider>
     <div *ngFor="for let task of tasks">
-        <mat-list-item><i class="fa-solid fa-share-nodes"></i>{{ task.title }}</mat-list-item>
+        <mat-list-item><i class="fa-solid fa-share-nodes icon"></i>{{ task.name }}</mat-list-item>
         <mat-divider></mat-divider>
     </div>
 </mat-list>

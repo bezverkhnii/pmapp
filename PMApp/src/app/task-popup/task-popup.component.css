@@ -89,6 +89,19 @@ app-side-nav{
     color:rgb(156, 156, 156)
 }
 
+.not-started{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgb(151, 38, 185);
+    background-color: rgba(187, 75, 176, 0.2);
+    padding:1rem;
+    border-radius: 10rem;
+    height:0.3rem;
+}
+
 mat-form-field{
     height:4rem;
     width:10rem;

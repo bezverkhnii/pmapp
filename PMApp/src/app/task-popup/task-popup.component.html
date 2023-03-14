@@ -7,32 +7,34 @@
             <div class="close">
                 <button><mat-icon fontIcon="disabled_by_default"></mat-icon></button>
             </div>
-            <div class="task-name">
-                <input type="text" placeholder="New task">
-            </div>
-            <mat-divider></mat-divider>
-            <div class="content">
-                <div class="status">
-                    <p class="prop">Status</p>
-                    <p>data here</p>
+            <form>
+                <div class="task-name">
+                    <input class="task-name" name="name" type="text" placeholder="New task" [(ngModel)]="task.name" required>
                 </div>
-                <div class="due">
-                    <p class="prop">Due date</p>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Select date</mat-label>
-                        <input matInput [matDatepicker]="picker">
-                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
+                <mat-divider></mat-divider>
+                <div class="content">
+                    <div class="status">
+                        <p class="prop">Status</p>
+                        <div class="not-started">Not started</div>
+                    </div>
+                    <div class="due">
+                        <p class="prop">Due date</p>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select date</mat-label>
+                            <input matInput [matDatepicker]="picker" name="dueDate" [(ngModel)]="task.dueDate" required> 
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="priority">
+                        <p class="prop">Priority</p>
+                        <p>data here</p>
+                    </div>
                 </div>
-                <div class="priority">
-                    <p class="prop">Priority</p>
-                    <p>data here</p>
+                <div class="submit">
+                    <button type="submit" (click)="createTask(task)">Submit</button>
                 </div>
-            </div>
-            <div class="submit">
-                <button class="">Submit</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>
