@@ -57,15 +57,20 @@ export class LoginPageComponent implements OnInit {
     fetch(this.url, options)
     .then(response => {
       if (response.ok) {
-        this.openSnackBar('User logged in successfully!', '✅');
-        this.userDataService.userData = { username: this.login }
-        this.router.navigate(['/main']);
+        return response.json();
       } else {
-        this.openSnackBar('Invalid login or password', '❌');
+        throw new Error('Invalid login or password');
       }
     })
+    .then(data => {
+      const token = data.token;
+      this.openSnackBar('User logged in successfully!', '✅');
+      this.userDataService.userData = { username: this.login };
+      localStorage.setItem('token', token);
+      this.router.navigate(['/main']);
+    })
     .catch(error => {
-      this.openSnackBar('Error logging in user:', error);
+      this.openSnackBar(error, '❌');
     });
   }
 }
