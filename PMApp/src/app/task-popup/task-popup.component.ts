@@ -18,6 +18,5 @@ export class TaskPopupComponent implements OnInit {
   createTask(task: Task){
     this.task.status = 'Not started';
     this.userDataService.tasksList.push(task);
-    console.log(this.userDataService.tasksList)
   }
 }

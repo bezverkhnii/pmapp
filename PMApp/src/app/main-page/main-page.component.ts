@@ -22,7 +22,7 @@ export class MainPageComponent implements OnInit {
   
       return JSON.parse(jsonPayload);
   }
-    fetch('/boards', { headers:{ Authorization:`Bearer ${token}` } })
+    fetch('/main', { headers:{ Authorization:`Bearer ${token}` } })
     this.userData = parseJwt(token);
   }
 }

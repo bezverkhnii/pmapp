@@ -13,5 +13,5 @@ export class AllTasksComponent implements OnInit{
 
   ngOnInit(){ 
   }
-  tasks = this.userDataService.tasksList;
+  tasks = JSON.parse(localStorage.getItem('tasks') || '{}')
 }
