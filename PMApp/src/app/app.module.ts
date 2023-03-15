@@ -23,6 +23,7 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     MainPageModule,

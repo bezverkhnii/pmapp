@@ -78,3 +78,10 @@ mat-form-field{
 .sign-in a:hover{
     color:rgb(243, 176, 51);
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { RegService } from '../service/reg.service';
 
 
  
@@ -15,16 +18,22 @@ import {
 export class RegPageComponent implements OnInit {
   hide = true;
 
-  url = 'http://localhost:3000/auth/signup';
-
-  name!: string;
-  login!: string;
-  password!: string;
+  responsedata:any;
+  
+  constructor(private service: RegService,
+    private router:Router,
+    private _snackBar: MatSnackBar) {
+    localStorage.clear();
+  }
+  Register = new FormGroup({
+    name: new FormControl("", Validators.required),
+    login: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required)
+  });
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -37,32 +46,15 @@ export class RegPageComponent implements OnInit {
     });
   }
 
-  logInputValues(): void {
-    let data = {
-      name: this.name,
-      login: this.login,
-      password: this.password,
-    };
-  
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    };
-
-    fetch(this.url, options)
-    .then(response => {
-    if (response.ok) {
-      this.openSnackBar('User created successfully', '✅');
-    } else {
-      this.openSnackBar('Failed to create user', '❌');
+  ProceedRegister(){
+    if(this.Register.valid){
+      this.service.ProceedRegister(this.Register.value).subscribe(result => {
+        if(result!=null){
+          this.responsedata=result;
+          console.log(result)
+          this.openSnackBar(`User '${this.Register.value.name}' has been created succesfully`, 'cool!')
+        }
+      })
     }
-  })
-  .catch(error => {
-    console.error('Error creating user:', error);
-  });
   }
-
 }
