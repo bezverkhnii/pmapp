@@ -8,14 +8,13 @@ import { TaskPopupComponent } from './task-popup/task-popup.component';
 import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  {
-    component: MainPageComponent, path: '',
-    children: [
+  {component: MainPageComponent, path: ''},
+  {path: '', children: [
       {component: KanbanViewComponent, path: 'kanban-table'},
       {component: TaskPopupComponent, path: 'create-task'}
     ],canActivate: [AuthGuard]
   },
-  {component: LoginComponent, path: 'login'},
+  {component: LoginComponent, path: 'login',canActivate: [AuthGuard]},
   {component: RegPageComponent, path: 'register'},
 ];
 

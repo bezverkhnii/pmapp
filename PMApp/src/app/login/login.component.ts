@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       this.service.ProceedLogin(this.Login.value).subscribe(result => {
         if(result!=null){
           this.responsedata=result;
-          localStorage.setItem('token',this.responsedata.jwtToken);
+          localStorage.setItem('token',this.responsedata.token);
           this.openSnackBar(`Welcome back, ${this.Login.value.login}!`, ':)')
           this.router.navigate([''])
         }
