@@ -1,3 +1,11 @@
+div{
+        position: absolute;
+        left:0rem;
+        width:100px;
+        height: 100%;
+        background-color: rgb(23,31,57);
+}
+
 .side-nav-content{
     color:white;
 }
