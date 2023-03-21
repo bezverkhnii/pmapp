@@ -46,6 +46,7 @@ export class RegPageComponent implements OnInit {
     });
   }
 
+  
   ProceedRegister(){
     if(this.Register.valid){
       this.service.ProceedRegister(this.Register.value).subscribe(result => {
@@ -53,6 +54,7 @@ export class RegPageComponent implements OnInit {
           this.responsedata=result;
           console.log(result)
           this.openSnackBar(`User '${this.Register.value.name}' has been created succesfully`, 'cool!')
+          this.router.navigate(['login']);
         }
       })
     }
