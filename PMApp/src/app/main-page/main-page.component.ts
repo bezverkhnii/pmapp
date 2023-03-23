@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from '../user-data.service';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root',
+})
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -8,8 +11,7 @@ import { UserDataService } from '../user-data.service';
 })
 export class MainPageComponent implements OnInit {
   userData:any;
-  constructor(private userDataService: UserDataService){}
-  
+
 
   ngOnInit(){
     const token = localStorage.getItem('token')
@@ -24,5 +26,6 @@ export class MainPageComponent implements OnInit {
   }
     fetch('', { headers:{ Authorization:`Bearer ${token}` } })
     this.userData = parseJwt(token);
+    const login = localStorage.setItem('login', this.userData.login);
   }
 }

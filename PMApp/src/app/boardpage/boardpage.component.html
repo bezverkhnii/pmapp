@@ -1,0 +1,16 @@
+<div class="">
+    <app-side-nav></app-side-nav>
+</div>
+<div class="display-area">
+    <div class="header">
+        <p>Your Boards</p>
+    </div>
+    <div class="container">
+        <div *ngFor="let board of boardsList" class="card">
+            <p>{{ board.title }}</p>
+        </div>
+        <button class="card" mat-button (click)="openDialog()">
+            <p class="create">create new board+</p>
+        </button>
+    </div>
+</div>

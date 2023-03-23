@@ -13,7 +13,9 @@ import { LoginModule } from './login/login.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { TokenInterceptorService } from './service/token-interceptor.service';
-
+import { BoardpageModule } from './boardpage/boardpage.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateBoardModule } from './create-board/create-board.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
     RegPageModule,
     TaskPopupModule,
     MatSnackBarModule,
-    LoginModule
+    LoginModule,
+    BoardpageModule,
+    MatDialogModule,
+    CreateBoardModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptorService, multi:true}],
   bootstrap: [AppComponent]
