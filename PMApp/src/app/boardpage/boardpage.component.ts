@@ -3,7 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomerService } from '../service/customer.service';
 import {MatDialog} from '@angular/material/dialog';
 import { CreateBoardComponent } from '../create-board/create-board.component';
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-boardpage',
@@ -11,7 +12,8 @@ import { CreateBoardComponent } from '../create-board/create-board.component';
   styleUrls: ['./boardpage.component.css']
 })
 export class BoardpageComponent implements OnInit {
-  constructor(private customerService: CustomerService, private dialog: MatDialog){  }
+  constructor(private customerService: CustomerService, private dialog: MatDialog,
+    private router: Router, private activatedRoute: ActivatedRoute){  }
   boardsList:any = [];
 
   userData:any
@@ -41,14 +43,19 @@ export class BoardpageComponent implements OnInit {
     .catch(error => console.log(error));
   }
 
-  // Board = new FormGroup({
-  //   title: new FormControl("", Validators.required),
-  //   owner: this.userdata.userData.login
-  // });
   openDialog() {
     this.dialog.open(CreateBoardComponent, {
       height: '200px',
       width: '500px',
     });
   }
+
+
+  loadBoard(boardId:any) {
+    this.customerService.loadBoard(boardId).then(result => {
+      this.customerService.chosenBoard = result;
+      this.router.navigate([`${boardId}`], {relativeTo: this.activatedRoute});
+    });
+  }
+
 }

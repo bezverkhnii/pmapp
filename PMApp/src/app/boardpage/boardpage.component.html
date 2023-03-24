@@ -6,7 +6,7 @@
         <p>Your Boards</p>
     </div>
     <div class="container">
-        <div *ngFor="let board of boardsList" class="card">
+        <div *ngFor="let board of boardsList" class="card" (click)="loadBoard(board._id)">
             <p>{{ board.title }}</p>
         </div>
         <button class="card" mat-button (click)="openDialog()">

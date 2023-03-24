@@ -26,6 +26,5 @@ export class MainPageComponent implements OnInit {
   }
     fetch('', { headers:{ Authorization:`Bearer ${token}` } })
     this.userData = parseJwt(token);
-    const login = localStorage.setItem('login', this.userData.login);
   }
 }

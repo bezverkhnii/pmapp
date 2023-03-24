@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MainPageComponent } from '../main-page/main-page.component';
 import { CustomerService } from '../service/customer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-board',
@@ -10,7 +10,8 @@ import { CustomerService } from '../service/customer.service';
 })
 export class CreateBoardComponent {
 
-  constructor(private service: CustomerService){}
+  constructor(private service: CustomerService,
+              private route: ActivatedRoute){}
 
 
   token = localStorage.getItem('token');
@@ -35,9 +36,9 @@ export class CreateBoardComponent {
 
   createBoard(){
     if (this.Board.valid) {
+      console.log(this.route.snapshot.params['id'])
       console.log(this.Board.value)
-      this.service.createBoard(this.Board.value);
-      location.reload();
+      // this.service.createBoard(this.Board.value);
     }
   }
 }

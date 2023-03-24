@@ -16,6 +16,7 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { BoardpageModule } from './boardpage/boardpage.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateBoardModule } from './create-board/create-board.module';
+import { BoardModule } from './board/board.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CreateBoardModule } from './create-board/create-board.module';
     LoginModule,
     BoardpageModule,
     MatDialogModule,
-    CreateBoardModule
+    CreateBoardModule,
+    BoardModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptorService, multi:true}],
   bootstrap: [AppComponent]
