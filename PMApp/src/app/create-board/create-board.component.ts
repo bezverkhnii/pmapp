@@ -38,7 +38,8 @@ export class CreateBoardComponent {
     if (this.Board.valid) {
       console.log(this.route.snapshot.params['id'])
       console.log(this.Board.value)
-      // this.service.createBoard(this.Board.value);
+      this.service.createBoard(this.Board.value);
+      location.reload();
     }
   }
 }
