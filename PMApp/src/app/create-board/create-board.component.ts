@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomerService } from '../service/customer.service';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-board',
   templateUrl: './create-board.component.html',
   styleUrls: ['./create-board.component.css']
 })
-export class CreateBoardComponent {
+export class CreateBoardComponent implements OnInit {
 
   constructor(private service: CustomerService,
-              private route: ActivatedRoute){}
+              private route: ActivatedRoute,
+              public translate: TranslateService){}
 
 
+  language:any = localStorage.getItem('language');
+  ngOnInit(){
+    this.translate.use(this.language)
+  }
   token = localStorage.getItem('token');
 
   parseJwt (token: any) {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BoardpageComponent } from './boardpage.component';
 import { SideNavModule } from '../side-nav/side-nav.module';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,8 @@ import { SideNavModule } from '../side-nav/side-nav.module';
   ],
   imports: [
     CommonModule,
-    SideNavModule
+    SideNavModule,
+    TranslateModule
   ],
   exports: [
     BoardpageComponent

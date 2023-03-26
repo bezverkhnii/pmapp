@@ -12,18 +12,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MainPageComponent implements OnInit {
   userData:any;
-
+  language:any = localStorage.getItem('language')
   constructor(public translate: TranslateService){
-    translate.addLangs(['en', 'ru']);
-    translate.setDefaultLang('en');
+
   }
 
-  switchLang(lang:string){
-    localStorage.setItem('language',lang);
-    this.translate.use(lang)
-  }
 
   ngOnInit(){
+    this.translate.use(this.language)
     localStorage.setItem('language', 'en');
     const token = localStorage.getItem('token')
     function parseJwt (token: any) {

@@ -6,9 +6,13 @@
     </ul>
     <ul class="login">
         <li class="nav-list-item">
-            <mat-slide-toggle class="slide-toggle">
-                <p>RU</p>
-            </mat-slide-toggle>
+            <span class="form-inline">
+                <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+                  <option *ngFor="let language of translate.getLangs()" [value]="language" [selected]="language === translate.currentLang">
+                    {{ language }}
+                  </option>
+                </select>
+              </span>
         </li>
         <li class="nav-list-item">
             <a href="login"><i class="fa-solid fa-right-to-bracket"></i></a>

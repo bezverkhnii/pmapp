@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { CreateBoardComponent } from '../create-board/create-board.component';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-boardpage',
@@ -13,12 +14,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BoardpageComponent implements OnInit {
   constructor(private customerService: CustomerService, private dialog: MatDialog,
-    private router: Router, private activatedRoute: ActivatedRoute){  }
+    private router: Router, private activatedRoute: ActivatedRoute,
+    public translate: TranslateService){  }
   boardsList:any = [];
 
   userData:any
+  language:any = localStorage.getItem('language');
 
   ngOnInit(){
+    this.translate.use(this.language)
     const token = localStorage.getItem('token')
     function parseJwt (token: any) {
       var base64Url = token.split('.')[1];

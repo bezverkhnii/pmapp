@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-board',
@@ -12,7 +13,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class BoardComponent {
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router,
-              private service: CustomerService) {}
+              private service: CustomerService,
+              public translate: TranslateService) {}
 
   url = 'http://localhost:3000/boards';
 
@@ -20,8 +22,9 @@ export class BoardComponent {
   columns:any[] = [];
   popUp: any;
   taskPopup:any;
-
+  language:any = localStorage.getItem('language')
   ngOnInit() {
+    this.translate.use(this.language)
     const popup = document.getElementById('popup');
     const taskPopup = document.getElementById('taskPopup');
     this.popUp = popup;

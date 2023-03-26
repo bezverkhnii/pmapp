@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-side-nav',
@@ -7,7 +9,17 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent {
 
-  color = 'warn';
+  constructor(public translate: TranslateService){
+    translate.addLangs(['en', 'ru']);
+    translate.setDefaultLang('en');
+  }
+
+  
+  switchLang(lang:string){
+    localStorage.setItem('language',lang);
+    location.reload();
+  }
+
 
   items = [
     {
@@ -29,5 +41,7 @@ export class SideNavComponent {
       path: 'boards'
     }
   ]
+
+
 
 }

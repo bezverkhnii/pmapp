@@ -1,5 +1,22 @@
 {
     "welcome": "Welcome",
     "plan" : "Here is your plan for today",
-    "search" : "Find necessary task!"
+    "search" : "Find necessary task!",
+    "board-directory" : "Your boards",
+    "your-boards" : "Your boards",
+    "show-board" : "Show board",
+    "remove-board" : "Remove board(!)",
+    "create-board" : "Create new board+",
+    "new-board" : "New board",
+    "submit": "Submit",
+    "close" : "Close",
+    "tasks-directory": "All tasks",
+    "create-column": "Create new column+",
+    "new-column": "New column",
+    "new-task" : "New task",
+    "description" : "Write a short a description",
+    "task-holder" : "This task is..",
+    "add-task": "+Add task",
+    "remove-task" : "Remove task",
+    "remove-column" : "Remove column (!)"
 }

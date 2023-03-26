@@ -1,11 +1,11 @@
 <div class="card">
     <form [formGroup]="Board" (ngSubmit)="createBoard()">
         <div class="board-name">
-            <input class="board-name" name="name" type="text" placeholder="New Board" formControlName="title" required>
+            <input class="board-name" name="name" type="text" placeholder="{{ 'new-board' | translate}}" formControlName="title" required>
         </div>
         <mat-divider></mat-divider>
         <div class="submit">
-            <button type="submit">Submit</button>
+            <button type="submit">{{ "submit" | translate}}</button>
         </div>
     </form>
 </div>
