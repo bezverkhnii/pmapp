@@ -11,12 +11,15 @@ import { TaskPopupModule } from './task-popup/task-popup.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginModule } from './login/login.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { BoardpageModule } from './boardpage/boardpage.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateBoardModule } from './create-board/create-board.module';
 import { BoardModule } from './board/board.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+
 
 @NgModule({
   declarations: [
@@ -39,9 +42,21 @@ import { BoardModule } from './board/board.module';
     BoardpageModule,
     MatDialogModule,
     CreateBoardModule,
-    BoardModule
+    BoardModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+export function httpTranslateLoader(http: HttpClient){
+  return new TranslateHttpLoader(http)
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,18 @@ import { Injectable } from '@angular/core';
 export class MainPageComponent implements OnInit {
   userData:any;
 
+  constructor(public translate: TranslateService){
+    translate.addLangs(['en', 'ru']);
+    translate.setDefaultLang('en');
+  }
+
+  switchLang(lang:string){
+    localStorage.setItem('language',lang);
+    this.translate.use(lang)
+  }
 
   ngOnInit(){
+    localStorage.setItem('language', 'en');
     const token = localStorage.getItem('token')
     function parseJwt (token: any) {
       var base64Url = token.split('.')[1];

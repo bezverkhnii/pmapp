@@ -7,7 +7,7 @@ import { CalendarModule } from '../calendar/calendar.module';
 import { SideNavModule } from '../side-nav/side-nav.module';
 import { MainPageComponent } from '../main-page/main-page.component';
 import { MatIconModule } from '@angular/material/icon';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
     AllTasksModule,
     CalendarModule,
     SideNavModule,
-    MatIconModule
-  ],
+    MatIconModule,
+    TranslateModule
+],
   exports:[
     MainPageComponent
   ]

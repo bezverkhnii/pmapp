@@ -5,17 +5,23 @@
       <div class="display-area">
         <div class="welcome-container">
           <div class="">
-              <h1>Welcome, {{ userData.login }}!</h1>
-              <h3>Here is your plan for today</h3>
+              <h1>{{ 'welcome' | translate }}, {{ userData.login }}!</h1>
+              <h3>{{ 'plan' | translate}}</h3>
           </div>
             <div class="search-container">
               <form action="" class="search-bar">
-                <input type="text" placeholder="Find necessary task!" name="q">
+                <input type="text" placeholder="{{ 'search' | translate }}!" name="q">
                 <button type="submit"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon></button>
               </form>
           </div>
-          <div class="user-container">
-            <p class="user-name">{{ userData.login }}</p>
+          <div class="lang-container">
+            <span class="form-inline">
+              <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+                <option *ngFor="let language of translate.getLangs()" [value]="language" [selected]="language === translate.currentLang">
+                  {{ language }}
+                </option>
+              </select>
+            </span>
           </div>
         </div>
         <div class="main">
