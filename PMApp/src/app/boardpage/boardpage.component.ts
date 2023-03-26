@@ -58,4 +58,8 @@ export class BoardpageComponent implements OnInit {
     });
   }
 
+  removeBoard(boardId:any) {
+    this.customerService.removeBoard(boardId);
+    location.reload();
+}
 }

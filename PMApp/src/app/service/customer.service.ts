@@ -68,10 +68,22 @@ export class CustomerService {
       return board;
   }
 
-  removeBoard(id:any){
-    return this.http.delete(this.apiUrl + '/' + id)
+  removeBoard(boardId:any){
+    fetch(`${this.apiUrl}/${boardId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.token}`
+      }
+    })
+    .then(response => {
+      if(!response.ok){
+        throw new Error('Network response was not ok')
+      }
+    })
+    .catch(error => console.error(error));
   }
-
+  
   createColumn(boardId:string, column:any){
     fetch(`${this.apiUrl}/${boardId}/columns`, {
       method: 'POST',
