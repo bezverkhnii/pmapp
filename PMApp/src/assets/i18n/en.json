@@ -1,7 +1,7 @@
 {
     "welcome": "Welcome",
     "plan" : "Here is your plan for today",
-    "search" : "Find necessary task!",
+    "search" : "Find necessary board!",
     "board-directory" : "Your boards",
     "your-boards" : "Your boards",
     "show-board" : "Show board",
@@ -10,7 +10,7 @@
     "new-board" : "New board",
     "submit": "Submit",
     "close" : "Close",
-    "tasks-directory": "All tasks",
+    "tasks-directory": "Your tasks",
     "create-column": "Create new column+",
     "new-column": "New column",
     "new-task" : "New task",

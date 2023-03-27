@@ -1,7 +1,7 @@
 <p class="header">{{ 'board-directory' | translate}}</p>
 <mat-list>
-    <div *ngFor="let task of tasks">
-        <mat-list-item>{{ task.title }}</mat-list-item>
+    <div *ngFor="let board of boards">
+        <mat-list-item>{{ board.title }}</mat-list-item>
         <mat-divider></mat-divider>
     </div>
 </mat-list>

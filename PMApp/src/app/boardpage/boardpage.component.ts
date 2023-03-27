@@ -22,6 +22,7 @@ export class BoardpageComponent implements OnInit {
   language:any = localStorage.getItem('language');
 
   ngOnInit(){
+    this.customerService.getTasks();
     this.translate.use(this.language)
     const token = localStorage.getItem('token')
     function parseJwt (token: any) {

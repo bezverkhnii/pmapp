@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CustomerService } from '../service/customer.service';
 
 @Component({
   selector: 'app-todays-task',
@@ -8,18 +9,18 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./todays-task.component.css']
 })
 export class TodaysTaskComponent implements OnInit {
-  tasks: Task[] = [
-    new Task('This'),
-    new Task('works'),
-  ];
+  boards = this.service.boards;
 
-  constructor(public translate: TranslateService) {}
+  constructor(public translate: TranslateService,
+              private service: CustomerService) {}
 
   language:any = localStorage.getItem('language');
 
   ngOnInit(){
     this.translate.use(this.language);
   }
+
+
 
 }
 

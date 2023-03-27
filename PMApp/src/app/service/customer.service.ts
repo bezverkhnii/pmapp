@@ -142,4 +142,61 @@ export class CustomerService {
     .catch(error => console.error(error));
   }
 
-}
+  tasks:any = [];
+  boards:any = [];
+
+  async getTasks(){
+    let data;
+    let idArr = [];
+    let colIds = [];
+    try{
+    const response = await fetch(this.apiUrl, { headers: { 'Authorization': 'Bearer ' + this.token } })
+    data = await response.json();
+    for(let board of data){
+      idArr.push(board._id)
+      this.boards.push(board)
+    }
+    console.log(idArr)
+    }catch (error){
+      console.log(error)
+    }
+    try {
+      for(let i = 0; i < idArr.length; i++){
+        const response:any = await fetch(`${this.apiUrl}/${idArr[i]}/columns`, { headers: { 'Authorization': 'Bearer ' + this.token } })
+        data = await response.json();
+        for(let column of data){
+          colIds.push(column._id);
+        }
+      }
+      console.log(colIds)
+    }catch (error){
+      console.log(error)
+    }
+    try {
+      for(let j = 0; j < idArr.length; j++){
+        for(let k = 0; k < colIds.length; k++){
+          const response:any = await fetch(`${this.apiUrl}/${idArr[j]}/columns/${colIds[k]}/tasks`, { headers: { 'Authorization': 'Bearer ' + this.token } })
+          data = response.json();
+          data
+            .then((value:any) => {
+              if(value.statusCode === 404){
+                
+              } else {
+                this.tasks.push(...value);
+              }
+            }
+            );
+        }
+      }
+      this.tasks = this.tasks.filter((item:string, index:number) => {
+        return this.tasks.indexOf(item) === index;
+      }).filter((e:any) => e.length !== 0).flat()
+      console.log(this.tasks);
+      console.log(this.boards);
+    }catch (error){
+      console.log(error)
+    }
+    }
+
+  }
+

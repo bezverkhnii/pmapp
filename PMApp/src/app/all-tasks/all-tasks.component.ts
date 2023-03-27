@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from '../user-data.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CustomerService } from '../service/customer.service';
 
 @Component({
   selector: 'app-all-tasks',
@@ -9,13 +9,17 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AllTasksComponent implements OnInit{
 
-  constructor(private userDataService: UserDataService,
-              public translate: TranslateService){}
+  tasks = this.service.tasks;
+
+  constructor(public translate: TranslateService,
+              private service: CustomerService){}
 
   language:any = localStorage.getItem('language');
 
   ngOnInit(){
+    this.service.getTasks();
     this.translate.use(this.language)
+    console.log(this.service.tasks);
   }
-  tasks = JSON.parse(localStorage.getItem('tasks') || '{}')
+
 }
