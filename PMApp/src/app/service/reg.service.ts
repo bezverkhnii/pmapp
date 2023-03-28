@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RegService {
-  apiUrl = 'http://localhost:3000/auth/signup';
+  apiUrl = 'https://boiling-dusk-17255.herokuapp.com/auth/signup';
   constructor(private http:HttpClient) { }
 
   ProceedRegister(usercred:any){

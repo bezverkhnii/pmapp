@@ -9,17 +9,15 @@ import { CustomerService } from '../service/customer.service';
 })
 export class AllTasksComponent implements OnInit{
 
-  tasks = this.service.tasks;
-
   constructor(public translate: TranslateService,
               private service: CustomerService){}
 
   language:any = localStorage.getItem('language');
-
-  ngOnInit(){
-    this.service.getTasks();
-    this.translate.use(this.language)
-    console.log(this.service.tasks);
+  tasks: any;
+  async ngOnInit(){
+    await this.service.getTasks();
+    this.translate.use(this.language);
+    this.tasks = this.service.tasks;
+    console.log(this.tasks);
   }
-
 }

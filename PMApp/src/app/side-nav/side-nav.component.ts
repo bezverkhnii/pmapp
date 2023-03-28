@@ -36,12 +36,6 @@ export class SideNavComponent {
       name: 'overview',
       icon: 'fa-solid fa-compass-drafting',
       path: 'boards'
-    }, 
-    {
-      number: '3',
-      name: 'add task',
-      icon: 'fa-solid fa-square-plus',
-      path: 'boards'
     }
   ]
 

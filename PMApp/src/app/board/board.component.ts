@@ -16,7 +16,7 @@ export class BoardComponent {
               private service: CustomerService,
               public translate: TranslateService) {}
 
-  url = 'http://localhost:3000/boards';
+  url = 'https://boiling-dusk-17255.herokuapp.com/boards';
 
   board: any;
   columns:any[] = [];
@@ -31,7 +31,7 @@ export class BoardComponent {
     this.taskPopup = taskPopup;
     let token = localStorage.getItem('token');
     const id = this.route.snapshot.params['id'];
-    fetch(`http://localhost:3000/boards/${id}`, { headers:{ Authorization:`Bearer ${token}` } })
+    fetch(`https://boiling-dusk-17255.herokuapp.com/boards/${id}`, { headers:{ Authorization:`Bearer ${token}` } })
     .then(response => response.json())
     .then(data => {
       this.board = data;
@@ -39,13 +39,13 @@ export class BoardComponent {
     })
     .catch(error => console.log(error));
 
-    fetch(`http://localhost:3000/boards/${id}/columns`, { headers:{ Authorization:`Bearer ${token}`}})
+    fetch(`https://boiling-dusk-17255.herokuapp.com/boards/${id}/columns`, { headers:{ Authorization:`Bearer ${token}`}})
     .then(response => response.json())
     .then(data => {
       this.columns = data;
       console.log(this.columns);
       for(let i = 0; i < this.columns.length; i++){
-        fetch(`http://localhost:3000/boards/${id}/columns/${this.columns[i]._id}/tasks`, { headers:{ Authorization:`Bearer ${token}`}})
+        fetch(`https://boiling-dusk-17255.herokuapp.com/boards/${id}/columns/${this.columns[i]._id}/tasks`, { headers:{ Authorization:`Bearer ${token}`}})
         .then(response => response.json())
         .then(data =>{
           this.columns[i].tasks = data;
@@ -66,8 +66,8 @@ export class BoardComponent {
     title: new FormControl("", Validators.required),
     order: new FormControl(0, Validators.required),
     description: new FormControl('', Validators.required),
-    userId: new FormControl(0, Validators.required),
-    users: new FormControl(`me`, Validators.required)
+    userId: new FormControl(localStorage.getItem('userId'), Validators.required),
+    users: new FormControl([], Validators.required)
   });
 
 

@@ -7,9 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root'
 })
 export class CustomerService {
-  apiUrl = 'http://localhost:3000/boards' 
+  apiUrl = 'https://boiling-dusk-17255.herokuapp.com/boards' 
   token = localStorage.getItem('token');
-
   constructor(private http:HttpClient, private route: ActivatedRoute) { }
 
   createBoard(board:any){
@@ -196,6 +195,16 @@ export class CustomerService {
     }catch (error){
       console.log(error)
     }
+    }
+
+    async searchForTask(userId:any, task:string){
+      try{
+        const response = await fetch(`https://boiling-dusk-17255.herokuapp.com/tasksSet?userId=${userId}&search=${task}`, { headers: { 'Authorization': 'Bearer ' + this.token } })
+        let data = await response.json();
+        return data;
+        }catch (error){
+          console.log(error)
+        }
     }
 
   }

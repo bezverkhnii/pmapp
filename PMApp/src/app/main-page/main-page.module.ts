@@ -8,6 +8,9 @@ import { SideNavModule } from '../side-nav/side-nav.module';
 import { MainPageComponent } from '../main-page/main-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { TranslateModule } from '@ngx-translate/core';
     CalendarModule,
     SideNavModule,
     MatIconModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule
 ],
   exports:[
     MainPageComponent

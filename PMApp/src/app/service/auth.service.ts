@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'http://localhost:3000/auth/signin';
+  apiUrl = 'https://boiling-dusk-17255.herokuapp.com/auth/signin';
   constructor(private http:HttpClient) { }
 
   ProceedLogin(usercred:any){
