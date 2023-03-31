@@ -5,7 +5,7 @@
     "board-directory" : "Ваши доски",
     "your-boards" : "Ваши доски",
     "show-board" : "Перейти к доске",
-    "remove-board" : "Удалить доску(!)",
+    "remove-board" : "Удалить доску",
     "create-board" : "Создать новую доску+",
     "new-board" : "Новая доска",
     "submit": "Создать",
@@ -18,5 +18,5 @@
     "task-holder" : "Это задача..",
     "add-task": "+Добавить задачу",
     "remove-task" : "Удалить задачу",
-    "remove-column" : "Удалить колону (!)"
+    "remove-column" : "Удалить колону"
 }

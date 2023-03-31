@@ -5,7 +5,7 @@
     "board-directory" : "Your boards",
     "your-boards" : "Your boards",
     "show-board" : "Show board",
-    "remove-board" : "Remove board(!)",
+    "remove-board" : "Remove board",
     "create-board" : "Create new board+",
     "new-board" : "New board",
     "submit": "Submit",
@@ -18,5 +18,5 @@
     "task-holder" : "This task is..",
     "add-task": "+Add task",
     "remove-task" : "Remove task",
-    "remove-column" : "Remove column (!)"
+    "remove-column" : "Remove column"
 }

@@ -46,17 +46,25 @@ export class LoginComponent implements OnInit {
   }
 
   ProceedLogin() {
-    if (this.Login.valid) {
-      console.log(this.Login.value)
-      this.service.ProceedLogin(this.Login.value).subscribe(result => {
-        if(result!=null){
-          this.responsedata=result;
-          localStorage.setItem('token',this.responsedata.token);
+  if (this.Login.valid) {
+    this.service.ProceedLogin(this.Login.value).subscribe(
+      result => {
+        if (result != null) {
+          this.responsedata = result;
+          localStorage.setItem('token', this.responsedata.token);
           this.openSnackBar(`Welcome back, ${this.Login.value.login}!`, ':)')
           this.router.navigate([''])
         }
-      });
-    }
+      },
+      error => {
+        if (error.status === 401) {
+          this.openSnackBar(`Unauthorized access. Please check your login credentials.`, ':(')
+        } else {
+          this.openSnackBar(`An error occurred. Please try again later.`, ':(')
+        }
+      }
+    );
   }
+}
 
 }

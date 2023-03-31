@@ -8,12 +8,15 @@
     <div class="container">
         <div *ngFor="let board of boardsList" class="card">
             <p>{{ board.title }}</p>
-            <button class="show" mat-button (click)="loadBoard(board._id)">
+            <!-- OLD VERSION -->
+            <!-- <button class="show" mat-button (click)="loadBoard(board._id)">
                 {{ "show-board" | translate }}
             </button>
             <button class="remove" mat-button (click)="removeBoard(board._id)">
                 {{ "remove-board" | translate }}
-            </button>
+            </button> -->
+        <div class="btn"><a mat-button (click)="loadBoard(board._id)">{{ "show-board" | translate }}</a></div>
+		<div class="btn"><a mat-button (click)="removeBoard(board._id)" >{{ "remove-board" | translate }}</a></div>
         </div>
         <button class="card" mat-button (click)="openDialog()">
             <p class="create">{{ "create-board" | translate}}</p>

@@ -50,11 +50,11 @@
                         <h1>{{ task.title }}</h1>
                         <h3>{{ task.description }}</h3>
                     </div>
-                    <button class="remove-button" (click)="removeTask(column._id, task._id)">{{ 'remove-task' | translate }}</button> 
+                    <div class="btn"><a mat-button (click)="removeTask(column._id, task._id)">{{ 'remove-task' | translate }}</a></div>
                 </div>
-                <div class="btn">
-                    <button class="add-button" (click)="openTaskPopup(column._id)">{{ 'add-task' | translate }}</button>
-                    <button class="remove-button" (click)="removeColumn(column._id)">{{ 'remove-column' | translate }}</button>
+                <div class="btns">
+                    <div class="btn outer-btn"><a mat-button (click)="openTaskPopup(column._id)">{{ 'add-task' | translate }}</a></div>
+		            <div class="btn outer-btn"><a mat-button (click)="removeColumn(column._id)" >{{ 'remove-column' | translate }}</a></div>
                 </div>
             </mat-grid-tile>
         </mat-grid-list>

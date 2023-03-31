@@ -11,7 +11,7 @@ import { BoardComponent } from './board/board.component';
 const routes: Routes = [
   {component: MainPageComponent, path: '', canActivate: [AuthGuard]},
   {path: '', children: [
-      {component: TaskPopupComponent, path: 'create-task'},
+      // {component: TaskPopupComponent, path: 'create-task'},
       {component: BoardpageComponent, path: 'boards'},
       {component: BoardComponent, path:'boards/:id'}
     ],canActivate: [AuthGuard]
