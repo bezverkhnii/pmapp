@@ -17,23 +17,18 @@ body{
 }
 
 
-main{
-    position: absolute;
-    width: 100%;
-    top:6rem;
-    z-index: 1;
 
-}
 
 app-side-nav{
     position: absolute;
-    left:0rem;
+    z-index: 10;
 }
 
 .display-area{
-    width:80%;
-    position: absolute;
-    left:10rem;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
 }
 
 
@@ -244,7 +239,7 @@ app-side-nav{
 
 .open-popup{
     visibility: visible;
-    top:100%;
+    top:50%;
     transform: translate(-50%, -50%) scale(1);
 }
 

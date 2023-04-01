@@ -1,5 +1,4 @@
-<body>
-    <app-side-nav></app-side-nav>
+<app-side-nav></app-side-nav>
     <div class="display-area">
         <div class="header">
             <p *ngIf="!!this.board">{{ 'your-boards' | translate}} /<span class="bold">{{ this.board.title }}</span></p>
@@ -10,7 +9,8 @@
         <div class="popup" id="popup">
             <form [formGroup]="Column" (ngSubmit)="createColumn()">
                 <div class="board-name">
-                    <input class="board-name" name="name" type="text" placeholder="{{ 'new-column' | translate }}" formControlName="title" required>
+                    <input class="board-name" name="name" type="text" placeholder="{{ 'new-column' | translate }}"
+                        formControlName="title" required>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="buttons">
@@ -22,14 +22,16 @@
         <div id="taskPopup" class="popup">
             <form (ngSubmit)="createTask()">
                 <div class="task-name">
-                    <input class="task-name" name="name" type="text" placeholder="{{ 'new-task' | translate }}" [(ngModel)]="Task.value.title" required>
+                    <input class="task-name" name="name" type="text" placeholder="{{ 'new-task' | translate }}"
+                        [(ngModel)]="Task.value.title" required>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="content">
                     <div class="description">
                         <mat-form-field class="example-full-width">
                             <mat-label>{{ 'description' | translate }}</mat-label>
-                            <textarea matInput placeholder="{{ 'task-holder' | translate}}" [(ngModel)]="Task.value.description" [ngModelOptions]="{standalone: true}"></textarea>
+                            <textarea matInput placeholder="{{ 'task-holder' | translate}}"
+                                [(ngModel)]="Task.value.description" [ngModelOptions]="{standalone: true}"></textarea>
                         </mat-form-field>
                     </div>
                 </div>
@@ -50,14 +52,16 @@
                             <h1>{{ task.title }}</h1>
                             <h3>{{ task.description }}</h3>
                         </div>
-                        <div class="btn"><a mat-button (click)="removeTask(column._id, task._id)">{{ 'remove-task' | translate }}</a></div>
+                        <div class="btn"><a mat-button (click)="removeTask(column._id, task._id)">{{ 'remove-task' |
+                                translate }}</a></div>
                     </div>
                     <div class="btns">
-                        <div class="btn outer-btn"><a mat-button (click)="openTaskPopup(column._id)">{{ 'add-task' | translate }}</a></div>
-                        <div class="btn outer-btn"><a mat-button (click)="removeColumn(column._id)" >{{ 'remove-column' | translate }}</a></div>
+                        <div class="btn outer-btn"><a mat-button (click)="openTaskPopup(column._id)">{{ 'add-task' |
+                                translate }}</a></div>
+                        <div class="btn outer-btn"><a mat-button (click)="removeColumn(column._id)">{{ 'remove-column' |
+                                translate }}</a></div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-</body>

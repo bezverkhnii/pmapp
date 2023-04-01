@@ -1,6 +1,4 @@
-<div class="">
-    <app-side-nav></app-side-nav>
-</div>
+<app-side-nav></app-side-nav>
 <div class="display-area">
     <div class="header">
         <p>{{ "your-boards" | translate }}</p>
@@ -8,15 +6,8 @@
     <div class="container">
         <div *ngFor="let board of boardsList" class="card">
             <p>{{ board.title }}</p>
-            <!-- OLD VERSION -->
-            <!-- <button class="show" mat-button (click)="loadBoard(board._id)">
-                {{ "show-board" | translate }}
-            </button>
-            <button class="remove" mat-button (click)="removeBoard(board._id)">
-                {{ "remove-board" | translate }}
-            </button> -->
-        <div class="btn"><a mat-button (click)="loadBoard(board._id)">{{ "show-board" | translate }}</a></div>
-		<div class="btn"><a mat-button (click)="removeBoard(board._id)" >{{ "remove-board" | translate }}</a></div>
+            <div class="btn"><a mat-button (click)="loadBoard(board._id)">{{ "show-board" | translate }}</a></div>
+            <div class="btn"><a mat-button (click)="removeBoard(board._id)">{{ "remove-board" | translate }}</a></div>
         </div>
         <button class="card" mat-button (click)="openDialog()">
             <p class="create">{{ "create-board" | translate}}</p>

@@ -6,9 +6,8 @@
 }
 
 .display-area{
-    width:90%;
-    position: absolute;
-    left:10rem;
+	padding-left: 7rem;
+    width:100%;
 }
 
 .container{

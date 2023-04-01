@@ -2,9 +2,9 @@ div{
     position: absolute;
     left:0rem;
     width:100px;
-    height: 100vh;
     display: flex;
     background-color: rgb(23,31,57);
+    height: 100vh;
 }
 
 .side-nav-content{
@@ -14,7 +14,6 @@ div{
 .nav-list{
     padding-top:10rem;
     list-style: none;
-    height:100%;
 }
 
 .nav-list-item{
