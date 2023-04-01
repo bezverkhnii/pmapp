@@ -71,21 +71,6 @@ app-side-nav{
     box-shadow: 0.1px 0.1px 10px rgb(219, 213, 213);
 }
 
-/* ::ng-deep .mat-grid-list mat-grid-tile{
-    width: 300px !important;
-    height: auto !important;
-}
-
-::ng-deep .mat-grid-list mat-grid-tile .mat-grid-tile-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap:1rem;
-    position: relative;
-    padding-bottom: 4rem;
-  } */
-
 .container{
     display: grid;
     overflow: auto;
@@ -117,13 +102,6 @@ app-side-nav{
     color:rgb(23,31,57);
 }
 
-.card .content .remove-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:10rem;
-    height: 1rem;
-}
 
 .head{
     text-transform: uppercase;
