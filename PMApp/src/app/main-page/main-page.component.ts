@@ -60,7 +60,6 @@ export class MainPageComponent implements OnInit {
     .subscribe(task => {
       this.searchForTask(task)
       if(task === 'object'){
-        console.log('xd')
       } else {
         this.options = [];
       }
