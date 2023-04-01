@@ -1,13 +1,15 @@
 .head{
-    padding:5rem 0px 0px 15rem;
-    font-size: 6rem;
+    padding:5rem 0px 0px 3rem;
+    font-size: 4rem;
+    line-height: 4rem;
     font-weight: bold;
     color: rgb(23,31,57);
 }
 
 .subhead{
-    padding:3rem 0px 0px 30rem;
+    padding:2rem 0px 0px 10rem;
     font-size: 3rem;
+    line-height: 3rem;
     font-weight: 300;
     color: rgb(23,31,57);
 }
@@ -84,4 +86,35 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .head{
+        padding:5rem 0px 0px 3rem;
+    }
+
+    .subhead{
+        padding:2rem 0px 0px 13rem;
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: 300;
+        color: rgb(23,31,57);
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .head{
+        padding:5rem 0px 0px 3rem;
+        font-size: 3rem;
+    }
+
+    .subhead{
+        padding:1rem 0 0 4rem;
+        font-size: 2rem;
+    }
 }

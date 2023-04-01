@@ -101,6 +101,7 @@ app-side-nav{
 }
 
 
+
 ::ng-deep .mat-grid-list mat-grid-tile .mat-grid-tile-content{
     display: block !important;
   }
@@ -137,4 +138,70 @@ app-side-nav{
     height:37px;
     background: rgb(23,31,57);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .display-area{
+        left:3rem;
+    }
+    
+}
+
+@media screen and (max-width: 758px) {
+
+    .display-area{
+        left:2rem;
+    }
+    
+    .welcome-container{
+        padding-left: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .welcome-container h1{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    
+    .welcome-container h3{
+        font-weight:lighter;
+        font-size: 1.6rem;
+    }
+    
+    .search-bar{
+        width:100%;
+        max-width:700px;
+        background:rgba(150, 150, 150, 0.2) ;
+        display: flex;
+        align-items: center;
+        border-radius: 60px;
+        padding:0 10px;
+    }
+    .mat-grid-list{
+        width:100%;
+    }
+
+    .calendar{
+        display: none;
+    }
+
+    .main{
+
+    }
+
+    ::ng-deep .mat-grid-list mat-grid-tile{
+        height: 300px !important;
+        width: 300px !important;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 440px) {
+    ::ng-deep .mat-grid-list mat-grid-tile{
+        height: 250px !important;
+        width: 230px !important;
+    }
 }

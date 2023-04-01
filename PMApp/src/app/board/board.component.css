@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(247,245,244);
+}
+
 .header{
     display: flex;
     align-items: center;
@@ -5,6 +9,7 @@
     font-size: 40px;
     padding:2rem 1rem 3rem 0;
     color:rgb(23,31,57);
+    overflow: auto;
 }
 
 .bold{
@@ -23,26 +28,28 @@ main{
 app-side-nav{
     position: absolute;
     left:0rem;
-    width:100px;
-    height: 100%;
-    background-color: rgb(23,31,57);
 }
 
 .display-area{
-    width:90%;
+    width:80%;
     position: absolute;
     left:10rem;
 }
 
 
 .card{
-    height:800px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: 1.5rem;
     background-color: white;
 }
 
 .card .btns{
     display: flex;
+    padding: 2rem 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -64,20 +71,36 @@ app-side-nav{
     box-shadow: 0.1px 0.1px 10px rgb(219, 213, 213);
 }
 
+/* ::ng-deep .mat-grid-list mat-grid-tile{
+    width: 300px !important;
+    height: auto !important;
+}
 
 ::ng-deep .mat-grid-list mat-grid-tile .mat-grid-tile-content{
-    /* display: block !important; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap:1rem;
-  }
+    position: relative;
+    padding-bottom: 4rem;
+  } */
+
+.container{
+    display: grid;
+    overflow: auto;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
 
 .card .content{
     display:flex;
+    width: 60%;
+    height: 20%;
     flex-direction: column;
-    width:20rem;
     box-shadow: 0.1px 0.1px 10px rgb(219, 213, 213);
     padding:1.5rem;
     border-radius: 1rem;
@@ -109,43 +132,12 @@ app-side-nav{
     padding: 2rem 0 1rem 1rem
 }
 
-/* .add-button{
-    cursor: pointer;
-    width:80%;
-    background: transparent;
-    border: 1px solid rgb(209, 209, 209);
-    padding:1rem;
-    color:rgb(133, 133, 133);
-    border-radius: 0.5rem;
-}
-
-.add-button:hover{
-    color:rgb(110, 110, 110);
-    background: rgb(248, 248, 248);
-    border: 1px solid rgb(172, 170, 170);
-}
-
-.remove-button{
-    cursor: pointer;
-    width:80%;
-    background: transparent;
-    border: 1px solid rgb(235, 144, 144);
-    padding:1rem;
-    color:rgb(219, 137, 137);
-    border-radius: 0.5rem;
-}
-
-.remove-button:hover{
-    color:rgb(145, 43, 43);
-    background: rgb(255, 218, 218);
-    border: 1px solid rgb(201, 126, 126);
-} */
 .btn {
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 150px;
-	height: 20px;
+	width: 100%;
+	height: 40px;
 	margin: 0;
 	display: flex;
 	justify-content: center;
@@ -153,12 +145,12 @@ app-side-nav{
 }
 
 .outer-btn{
-    padding: 7px 20px;
+    width: 50%;
 }
 
 .btn a {
     cursor: pointer;
-	position: absolute;
+    position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -373,4 +365,63 @@ app-side-nav{
 
 .card .content .task{
     width:fit-content
+}
+
+@media screen and (max-width:1250px) {
+    .container{
+        grid-template-columns: 200px 200px 200px;
+    }
+    .card .content{
+        height: 100px;
+    }
+
+    ::ng-deep .mat-grid-list mat-grid-tile{
+        width: 200px !important;
+    }
+
+    .header{
+        font-size: 30px;
+    }
+
+    .create{
+        width: 15rem;
+        height: 2rem;
+    }
+    
+    .popup{
+        width: 350px;
+    }
+
+    .buttons button{
+        padding: 0;
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width:900px){
+    .header{
+        flex-direction: column;
+        display: flex;
+        align-items: flex-start;
+        gap:0;
+        padding:2rem 0;
+    }
+    .container{
+        padding-top: 2rem;
+        grid-template-columns: 200px 200px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .header{
+        flex-direction: column;
+        display: flex;
+        align-items: flex-start;
+        gap:0;
+        padding:2rem 0;
+    }
+    .container{
+        grid-template-columns: 400px;
+    }
+
 }

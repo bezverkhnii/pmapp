@@ -1,9 +1,10 @@
 div{
-        position: absolute;
-        left:0rem;
-        width:100px;
-        height: 100%;
-        background-color: rgb(23,31,57);
+    position: absolute;
+    left:0rem;
+    width:100px;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(23,31,57);
 }
 
 .side-nav-content{
@@ -18,8 +19,8 @@ div{
 
 .nav-list-item{
     display: flex;
+    padding-top:5rem;
     align-items: center;
-    height:50px;
     font-size: 1.1rem;
 }
 
@@ -27,10 +28,6 @@ div{
     color:orange;
 }
 
-.login{
-    position: absolute;
-    bottom:1rem;
-}
 
 ::ng-deep .mdc-form-field {
     display: flex !important;

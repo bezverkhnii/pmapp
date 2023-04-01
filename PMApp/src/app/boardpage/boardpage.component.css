@@ -186,3 +186,28 @@ button{
 	box-shadow: 0 0 5px #ff1f3d, 0 0 15px #ff1f3d, 0 0 30px #ff1f32,
 		0 0 60px #ff1f2a;
 }
+
+@media screen and (max-width: 920px){
+	.container{
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.card{
+		width: 15rem;
+		height: 10rem;
+	}
+
+	.card p{
+		font-size: 20px;
+	}
+
+	.card .create{
+		font-size: 17px;
+	}
+
+	.btn{
+		padding: 1px;
+	}
+}
